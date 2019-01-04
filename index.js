@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const serverless = require('serverless-http')
 const request=require('request')
 const csv=require('csvtojson')
 
@@ -22,4 +22,4 @@ app.get('/', function (req, res) {
   });
 })
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+module.exports.handler = serverless(app)
