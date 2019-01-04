@@ -2,9 +2,10 @@
   "name": "csv-to-json-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "functions/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "netlify-lambda build express",
+    "start": "node server-local.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   "dependencies": {
     "csvtojson": "^2.0.8",
     "express": "^4.16.4",
+    "netlify-lambda": "^1.1.1",
     "request": "^2.88.0",
     "serverless-http": "^1.8.0"
   }
