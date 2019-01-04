@@ -6,7 +6,6 @@ const bodyParser = require('body-parser');
 
 const router = express.Router();
 router.get('/', (req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/html' });
   if (!req.query.csv) return res.json({
     error: "Please pass in CSV url"
   });
