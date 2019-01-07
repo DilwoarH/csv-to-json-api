@@ -8,12 +8,13 @@ app.use((req, res, next) => {
   res.append('Access-Control-Allow-Origin', ['*']);
   res.append('Access-Control-Allow-Methods', 'GET');
   res.append('Access-Control-Allow-Headers', 'Content-Type');
-  res.setHeader('Content-Type', 'application/json');
   next();
 });
 
 app.get('/', function (req, res) {
-  if (!req.query.csv) return res.send('Please pass in CSV url');
+  if (!req.query.csv) return res.json({
+    error: "Please pass in CSV url"
+  });
 
   csv()
   .fromStream(request.get(req.query.csv))
