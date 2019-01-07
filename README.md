@@ -2,5 +2,5 @@
 
 ## How to use api
 ```
-http://localhost:3000/?csv={csv_url}
+https://csv-to-json.herokuapp.com/?csv=http://opendatanew-tunbridgewells.opendata.arcgis.com/datasets/f771696b598b4d2ba8e61e9729897f87_0.csv
 ```
