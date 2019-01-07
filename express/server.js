@@ -12,7 +12,6 @@ router.get('/', (req, res) => {
   console.log(req.query);
   if (!req.query.csv) return res.json({
     req: req,
-    query: req.query,
     error: "Please pass in CSV url"
   });
 
@@ -22,7 +21,6 @@ router.get('/', (req, res) => {
     res.json(json)
   });
 });
-
 
 app.use(bodyParser.json());
 app.use('/.netlify/functions/server', router);  // path must route to lambda
