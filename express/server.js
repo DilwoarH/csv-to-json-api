@@ -3,6 +3,8 @@ const express = require('express');
 const serverless = require('serverless-http');
 const app = express();
 const bodyParser = require('body-parser');
+const csv = require('csvtojson');
+const request = require('request');
 
 const router = express.Router();
 router.get('/', (req, res) => {
@@ -20,6 +22,7 @@ router.get('/', (req, res) => {
 
 app.use(bodyParser.json());
 app.use('/.netlify/functions/server', router);  // path must route to lambda
+app.use('/', router);
 
 module.exports = app;
 module.exports.handler = serverless(app);

@@ -21,11 +21,13 @@
     "url": "https://github.com/neverendingqs/netlify-express/issues"
   },
   "homepage": "https://github.com/neverendingqs/netlify-express#readme",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
+    "csvtojson": "^2.0.8",
+    "request": "^2.88.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "netlify-lambda": "^0.4.0",
     "serverless-http": "^1.6.0"
-  }
+  },
+  "devDependencies": {}
 }
