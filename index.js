@@ -1,8 +1,8 @@
 const express = require('express')
 const app = express()
-const serverless = require('serverless-http')
 const request=require('request')
 const csv=require('csvtojson')
+const port=process.env.PORT || 3000
 
 app.use((req, res, next) => {
   res.append('Access-Control-Allow-Origin', ['*']);
@@ -22,4 +22,4 @@ app.get('/', function (req, res) {
   });
 })
 
-module.exports.handler = serverless(app)
+app.listen(port, () => console.log(`Example app listening on port http://localhost:${port}!`))
