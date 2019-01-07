@@ -8,8 +8,6 @@ const request = require('request');
 
 const router = express.Router();
 router.get('/', (req, res) => {
-  console.log(req);
-  console.log(req.query);
   if (!req.query.csv) return res.json({
     req: req,
     error: "Please pass in CSV url"
